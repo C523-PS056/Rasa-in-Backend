@@ -10,4 +10,4 @@
 | `/api/articles/:id` | Update Article | `/api/articles/65616bd5f02afdb3f4f95a01` |  PUT  |
 | `/api/articles/:id` | Delete Article | `/api/articles/65616bd5f02afdb3f4f95a01` |  DELETE  |
 | `/api/categories/` | Add Categories | - |  POST  |
-| `/api/categories/` | Get Article | - |  GET  |
+| `/api/categories/` | Get Categories | - |  GET  |
