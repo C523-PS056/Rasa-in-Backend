@@ -3,6 +3,7 @@ const Post = require('../models/Post');
 
 // GET ALL POST
 router.get('/', async (req, res) => {
+  let arr = [];
   const username = req.query.user;
   const category = req.query.cat;
   try {
@@ -19,8 +20,11 @@ router.get('/', async (req, res) => {
     } else {
       post = await Post.find().sort({ createdAt: 'desc' });
     }
-
-    res.status(200).json(post);
+    for (let i = 0; i < post.length; i++) {
+      const { content, ...others } = post[i]._doc;
+      arr.push(others);
+    }
+    res.status(200).json(arr);
   } catch (error) {
     res.status(500).json({ message: 'Post tidak ditemukan' });
   }
@@ -33,7 +37,7 @@ router.get('/:id', async (req, res) => {
     if (!post) res.json({ message: 'Post tidak ditemukan' });
     res.status(200).json(post);
   } catch (error) {
-    res.status(400).json(error.message);
+    res.status(500).json(error.message);
   }
 });
 
