@@ -26,7 +26,7 @@ router.get('/', async (req, res) => {
     }
     res.status(200).json(arr);
   } catch (error) {
-    res.status(500).json({ message: 'Post tidak ditemukan' });
+    res.status(404).json({ message: 'Post tidak ditemukan' });
   }
 });
 
@@ -37,7 +37,7 @@ router.get('/:id', async (req, res) => {
     if (!post) res.json({ message: 'Post tidak ditemukan' });
     res.status(200).json(post);
   } catch (error) {
-    res.status(500).json(error.message);
+    res.status(404).json({ message: 'Post tidak ditemukan' });
   }
 });
 
