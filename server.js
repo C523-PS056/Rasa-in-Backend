@@ -21,6 +21,14 @@ const PORT = process.env.PORT || 5000;
 // routes middleware
 app.use('/api/articles', postRouter);
 
+app.get('/', (req, res) => {
+  res.send({
+    greet: 'Hello there 👋',
+    message: 'visit link on bellow for documentation about Resepin 👇',
+    documentation: 'https://github.com/Cakra17/Rasa-in-Backend',
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`server is running on port ${PORT}`);
 });
