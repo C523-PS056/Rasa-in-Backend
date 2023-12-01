@@ -1,5 +1,7 @@
 # Rasa-in-Backend
 
+**Base Url** :  `https://rasa-in-backend-foilb6bbw-cakra17.vercel.app/`
+
 | Endpoint | Usage | Example | Method |
 |----------|-------|---------|----------|
 | `/api/articles` | Add Article | - |  POST  |
