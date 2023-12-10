@@ -1,4 +1,5 @@
 const Post = require('../models/Post');
+const clodinary = require('../config/cloudinary');
 
 const getAllPost = async (req, res) => {
   let arr = [];
@@ -19,7 +20,7 @@ const getAllPost = async (req, res) => {
       post = await Post.find().sort({ createdAt: 'desc' });
     }
     for (let i = 0; i < post.length; i++) {
-      const { content, ...others } = post[i]._doc;
+      const { content, sanitizedHtml, ...others } = post[i]._doc;
       arr.push(others);
     }
     res.status(200).json(arr);
@@ -39,7 +40,17 @@ const getPostById = async (req, res) => {
 };
 
 const addPost = async (req, res) => {
-  const newPost = new Post(req.body);
+  const {
+    title, username, desc, content,
+  } = req.body;
+  const image = await clodinary.uploader.upload(req.file.path);
+  const newPost = new Post({
+    title,
+    thumb: image.url,
+    username,
+    desc,
+    content,
+  });
   try {
     const savedPost = await newPost.save();
     res.status(201).json(savedPost);
