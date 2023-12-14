@@ -46,7 +46,7 @@ const addPost = async (req, res) => {
   const image = await clodinary.uploader.upload(req.file.path);
   const newPost = new Post({
     title,
-    thumb: image.url,
+    thumb: image.secure_url,
     username,
     desc,
     content,
