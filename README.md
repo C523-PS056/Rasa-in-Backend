@@ -27,7 +27,7 @@ npm run dev
 
 ## How To Use It
 
-**Base Url** :  `https://rasa-in-backend-foilb6bbw-cakra17.vercel.app/`
+**Base Url** :  `https://rasa-in-backend.vercel.app/`
 
 | Endpoint | Usage | Example | Method |
 |----------|-------|---------|----------|
