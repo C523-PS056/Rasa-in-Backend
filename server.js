@@ -26,8 +26,8 @@ app.use('/api/articles', postRouter);
 app.get('/', (req, res) => {
   res.send({
     greet: 'Hello there 👋',
-    message: 'visit link on bellow for documentation about Resepin 👇',
-    documentation: 'https://github.com/Cakra17/Rasa-in-Backend',
+    message: 'visit link on bellow for documentation about Rasain 👇',
+    documentation: 'https://github.com/C523-PS056/Rasa-in-Backend',
   });
 });
 
