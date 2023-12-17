@@ -1,5 +1,32 @@
 # Rasa-in-Backend
 
+## Getting Started
+
+To get started running the project locally, please follow the steps below.
+
+First, clone the repository.
+
+```bash
+git clone https://github.com/C523-PS056/Rasa-in-Backend.git
+```
+
+Then, install dependencies and fetch data to your local machine. **Note that we use NPM**
+
+```bash
+cd Rasa-in-Backend
+npm install
+```
+
+Finally, run the development.
+
+```bash
+npm run dev
+```
+
+---
+
+## How To Use It
+
 **Base Url** :  `https://rasa-in-backend-foilb6bbw-cakra17.vercel.app/`
 
 | Endpoint | Usage | Example | Method |
